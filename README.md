@@ -1,10 +1,10 @@
-# FuncTelegramSender for Microtic
-Microtic RouterOS script to send messages to telegram.  
+# FuncTelegramSender for Mikrotik
+Mikrotik RouterOS script for sending Telegram messages.  
 Supports emojies, english and cyrillic characters.  
 Resolves the problem with Mikrotik unable to send emojies or cyrillic characters.
 
 ### Disclamer and expression of gratitude
-This script is a "forked" version of script created by Sertik that I found on the [forummikrotik.ru](https://forummikrotik.ru/viewtopic.php?p=81457#p81457).  
+This script is a "forked" version of script created by Sertik and published on [forummikrotik.ru](https://forummikrotik.ru/viewtopic.php?p=81457#p81457).  
 This version of script contains some improvements that I see handy.  
 For example code is reformatted for better reading, named variables now passing to script in contrast to position parameters, use of global virables now optional and so on...
 

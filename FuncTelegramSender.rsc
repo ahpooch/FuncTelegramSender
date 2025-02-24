@@ -1,12 +1,14 @@
-#-------------------------------------------------------------------------------------------------------#
-#        Function for transcoding and sending messages in telegram messager.                            #
-#        Supports emojies, english and russian languages.                                               #
-#            Initially created by Sertik.                                                               #
-#            "Forked" to GitHub by @ahpooch.                                                            #
-#            "Forked" from version 19.09.2021 at https://forummikrotik.ru/viewtopic.php?p=81457#p81457  #
-#            Updated: 24.02.2025                                                                        #
-#            Latest version here: https://github.com/ahpooch/FuncTelegramSender                         #
-#-------------------------------------------------------------------------------------------------------#
+#-----------------------------------------------------------------------------------------------------#
+#      Function for transcoding and sending messages in telegram messager.                            #
+#      Supports emojies, english and russian languages.                                               #
+#                                                                                                     #
+#      Initially created by Sertik.                                                                   #
+#      "Forked" to GitHub by @ahpooch.                                                                #
+#      "Forked" from version 19.09.2021 at https://forummikrotik.ru/viewtopic.php?p=81457#p81457      #
+#      Updated: 25.02.2025                                                                            #
+#      Version: 2.0.2                                                                                 #
+#      Latest version here: https://github.com/ahpooch/FuncTelegramSender                             #
+#-----------------------------------------------------------------------------------------------------#
 
 ### Usage
 # - Plain message to telegram group
@@ -21,7 +23,7 @@
 # $FuncTelegramSender "sunrise %F0%9F%8C%85" and a sunset %F0%9F%8C%87 emojies"  useGlobalVariables=yes
 
 # - Markdown format of message
-# $FuncTelegramSender "```powershell Get-Help``` probably most usefull cmdlet. %F0%9F%98%8E" -style=html useGlobalVariables=yes
+# $FuncTelegramSender "```powershell Get-Help``` probably most usefull Powershell cmdlet. %F0%9F%98%8E" -style=html useGlobalVariables=yes
 
 # - Html format of message
 # $FuncTelegramSender ("<b>" . "Ros version " . "$[/system resource get version]" . "</b>" . "%0A" . "RouterOS version " . "$[/system resource get version]") style=html useGlobalVariables=yes

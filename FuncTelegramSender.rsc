@@ -1,10 +1,10 @@
 #-------------------------------------------------------------------------------------------------------#
 #        Function for transcoding and sending messages in telegram messager.                            #
 #        Supports emojies, english and russian languages.                                               #
-#            Created by Sertik.                                                                         #
-#            Last published version 19.09.2021 at https://forummikrotik.ru/viewtopic.php?p=81457#p81457 #
-#                Republished to GitHub by @ahpooch.                                                     #
-#                Updated: 24.02.2025                                                                    #
+#            Initially created by Sertik.                                                               #
+#            "Forked" to GitHub by @ahpooch.                                                            #
+#            "Forked" from version 19.09.2021 at https://forummikrotik.ru/viewtopic.php?p=81457#p81457  #
+#            Updated: 24.02.2025                                                                        #
 #-------------------------------------------------------------------------------------------------------#
 
 ### Usage

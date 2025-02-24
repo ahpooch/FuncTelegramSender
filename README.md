@@ -1,5 +1,12 @@
 # FuncTelegramSender for Microtic
-I found this script on the [forummikrotik.ru](https://forummikrotik.ru/viewtopic.php?p=81457#p81457). Where it was published by Sertik. Therefore, I do not own any intellectual rights to it. However, to make this function work at the time I found it, a small code correction was needed, and I also have the desire to describe its usage in more detail and possibly support its functionality in the future.
+Microtic RouterOS script to send messages to telegram.  
+Supports emojies, english and cyrillic characters.  
+Resolves the problem with Mikrotik unable to send emojies or cyrillic characters.
+
+### Disclamer and expression of gratitude
+This script is a "forked" version of script created by Sertik that I found on the [forummikrotik.ru](https://forummikrotik.ru/viewtopic.php?p=81457#p81457).  
+This version of script contains some improvements that I see handy.  
+For example code is reformatted for better reading, named variables now passing to script in contrast to position parameters, use of global virables now optional and so on...
 
 # Usage
 ## Plain message to telegram group
@@ -32,7 +39,7 @@ Default style is html, so style=html could be omitted.
 
 # Tips
 ## About Cyrillic characters
-FuncTelegramSender could be used with cyrillic characters in scripts. 
+FuncTelegramSender could be used with cyrillic characters in scripts.  
 In winbox termianal however cyrillic characters cannot be entered from the keyboard, and when pasted they become replaced with ??? signs.
 
 ## About emojies convertion

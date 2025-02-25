@@ -11,21 +11,24 @@ For example code is reformatted for better reading, named variables now passing 
 
 # Installation
 ## Uploading FuncTelegramSender.rsc to Mikrotik
-Use Files -> Upload...
-Or fetch file directly from GitHub
+Use `Files -> Upload...` in winbox menu and select FuncTelegramSender.rsc to be uploaded to Mikrotik.  
+Or fetch file directly from GitHub:
 ```
-# Use dst-path=YOUR_PATH\FuncTelegramSender.rsc if you like.
 /tool fetch url="https://raw.githubusercontent.com/ahpooch/FuncTelegramSender/refs/heads/main/FuncTelegramSender.rsc" mode=https dst-path="FuncTelegramSender.rsc"
 ```
+Use `dst-path=YOUR_PATH\FuncTelegramSender.rsc` to specify your preferred path if you like.
 ## Importing FuncTelegramSender
 ```
-# Use YOUR_PATH\FuncTelegramSender.rsc if you plased script in a preferred directory.
 :import FuncTelegramSender.rsc
 ```
-You could set a scheduler to import FuncTelegramSender at startup
+Use `YOUR_PATH\FuncTelegramSender.rsc` if you placed the script in your preferred path.  
+
+### Importing FuncTelegramSender at startup
+You could set a scheduler to import FuncTelegramSender at startup:
 ```
 /system scheduler add name=FuncTelegramSenderImport start-time=startup interval=0 comment="FuncTelegramSender scheduled task to import itself on startup." on-event={ :import FuncTelegramSender.rsc }
 ```
+Use `YOUR_PATH\FuncTelegramSender.rsc` if you placed the script in your preferred path.
 
 # Usage
 ## Plain message to telegram group
@@ -40,7 +43,7 @@ Variable names FuncTelegramSenderApitoken and FuncTelegramSenderChatID are prede
 :global FuncTelegramSenderChatID "YOUR_GROUP_CHATID"
 $FuncTelegramSender "Test sending with global variables" useGlobalVariables=yes
 ```
-Global variables are creared on reboot, so you could use scheduler for restore them on boot
+Global variables are cleared on reboot, so you could use scheduled task to restore them at startup:
 ```
 /system scheduler add name=FuncTelegramSenderRestore start-time=startup interval=0 comment="FuncTelegramSender scheduled task to restore global variables FuncTelegramSenderApitoken and FuncTelegramSenderChatID on startup." on-event={ :global FuncTelegramSenderApitoken "<YOUR_BOT_APITOKEN>"; :global FuncTelegramSenderChatID "YOUR_GROUP_CHATID" }
 ```
@@ -52,19 +55,19 @@ $FuncTelegramSender "Sunrise %F0%9F%8C%85 and a sunset %F0%9F%8C%87 emojies." us
 
 ## Markdown format of message
 ```
-$FuncTelegramSender "```powershell Get-Help``` probably most usefull cmdlet. %F0%9F%98%8E" -style=html useGlobalVariables=yes
+$FuncTelegramSender "```powershell Get-Help``` probably most usefull Powershel cmdlet. %F0%9F%98%8E" -style=html useGlobalVariables=yes
 ```
 
 ## Html format of message
 ```
 $FuncTelegramSender ("<b>" . "Ros version " . "$[/system resource get version]" . "</b>" . "%0A" . "RouterOS version " . "$[/system resource get version]") style=html useGlobalVariables=yes
 ```
-Default style is html, so style=html could be omitted.
+The default style is `html`, so `style=html` could be omitted or left in for clarity.
 
 # Tips
 ## About Cyrillic characters
-FuncTelegramSender could be used with cyrillic characters in scripts.  
-In winbox termianal however cyrillic characters cannot be entered from the keyboard, and when pasted they become replaced with ??? signs.
+FuncTelegramSender can be used with Cyrillic characters in scripts.  
+In Winbox termianal however Cyrillic characters cannot be entered from the keyboard, and when pasted, they are replaced with ??? signs.
 
 ## About emojies convertion
-If you need convert emoji to URL-encoded format you could use https://www.urlencoder.org/
+If you need to convert emojis to a URL-encoded format, you can use one of online converters like [urlencoder.org](https://www.urlencoder.org/).

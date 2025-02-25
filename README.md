@@ -1,8 +1,8 @@
 # FuncTelegramSender
 Mikrotik RouterOS script for transcoding and sending Telegram messages.  
-- Supports emojies, english and cyrillic characters.  
+- Supports emojis, english and cyrillic characters.  
 - Could use defined global variables or named arguments to provide Telegram Apitoken and ChatID.  
-- Resolves the problem with Mikrotik `/tool fetch` unable to send emojies or cyrillic characters.
+- Resolves the problem with Mikrotik `/tool fetch` unable to send emojis or cyrillic characters.
 
 ### Disclamer and expression of gratitude
 This script is a "forked" version of script created by Sertik and published on [forummikrotik.ru](https://forummikrotik.ru/viewtopic.php?p=81457#p81457).  
@@ -48,9 +48,9 @@ Global variables are cleared on reboot, so you could use scheduled task to resto
 /system scheduler add name=FuncTelegramSenderRestore start-time=startup interval=0 comment="FuncTelegramSender scheduled task to restore global variables FuncTelegramSenderApitoken and FuncTelegramSenderChatID on startup." on-event={ :global FuncTelegramSenderApitoken "<YOUR_BOT_APITOKEN>"; :global FuncTelegramSenderChatID "YOUR_GROUP_CHATID" }
 ```
 
-## Use of emojies
+## Use of emojis
 ```
-$FuncTelegramSender "Sunrise %F0%9F%8C%85 and a sunset %F0%9F%8C%87 emojies." useGlobalVariables=yes
+$FuncTelegramSender "Sunrise %F0%9F%8C%85 and a sunset %F0%9F%8C%87 emojis." useGlobalVariables=yes
 ```
 
 ## Markdown format of message
@@ -69,5 +69,5 @@ The default style is `html`, so `style=html` could be omitted or left in for cla
 FuncTelegramSender can be used with Cyrillic characters in scripts.  
 In Winbox termianal however Cyrillic characters cannot be entered from the keyboard, and when pasted, they are replaced with ??? signs.
 
-## About emojies convertion
+## About emojis convertion
 If you need to convert emojis to a URL-encoded format, you can use one of online converters like [urlencoder.org](https://www.urlencoder.org/).
